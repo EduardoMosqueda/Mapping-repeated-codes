@@ -1,0 +1,39 @@
+<?php
+/*Mapea algunos grupos que se repiten en diferentes departamentos*/
+function dep($c_Departamento){
+	global $d;
+	$d=$c_Departamento;
+	return $d;
+}
+function Clasificador($c_Grupo){
+	global $d;
+	$g= $c_Grupo;
+	if ($d == "CONG" && $c_Grupo=="PAS"){
+		$g="Pasapalos";
+}elseif ($d == "VIV" && $c_Grupo=="PAS"){
+		$g="Pasta";
+}elseif ($d == "HYA" && $c_Grupo=="PAP"){
+		$g="Papél";
+}elseif ($d == "FRV" && $c_Grupo=="PAP"){
+		$g="Papelón";
+}elseif ($d == "CONG" && $c_Grupo=="FRT"){
+		$g="Frituras";
+}elseif ($d == "FRV" && $c_Grupo=="FRT"){
+		$g="Frutas";
+}elseif ($d == "VIV" && $c_Grupo=="GRA"){
+		$g="Granos";
+}elseif ($d == "FRV" && $c_Grupo=="GRA"){
+		$g="Granel";
+}elseif ($d == "VIV" && $c_Grupo=="PRE"){
+		$g="Preparados";
+}elseif ($d == "FRV" && $c_Grupo=="PRE"){
+		$g="Preempacados";
+}elseif ($d == "VIV" && $c_Grupo=="CRE"){
+		$g="Cereales";
+}elseif ($d == "CAP" && $c_Grupo=="CRE"){
+		$g="Carne";
+}else{$g=$c_Grupo;}
+	return $g;
+}
+
+?>
